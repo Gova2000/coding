@@ -106,7 +106,7 @@ app.put("/change-password", async (request, response) => {
     const hPassword = await bcrypt.compare(oldPassword, dBUser.password);
 
     if (hPassword === true) {
-      const lenPass = hPassword.length;
+      const lenPass = newPassword.length;
       if (lenPass < 5) {
         response.status(400);
         response.send("Password is too short");
