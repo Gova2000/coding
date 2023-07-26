@@ -9,7 +9,7 @@ const pathFix = path.join(__dirname, "userData.db");
 let db = null;
 const initializeDB = async () => {
   try {
-    db = open({
+    db = await open({
       filename: pathFix,
       driver: sqlite3.Database,
     });
